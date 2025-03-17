@@ -1,0 +1,105 @@
+ :root {
+            --beatz-izquierda: #0D0D0D;
+            --beatz-central: #0E1821;
+            --beatz-footer: #072130;
+            --beatz-cards: #501529;
+            --beatz-hover: #3B1D29;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        /* Color de la letra*/
+        .now-playing {
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            grid-template-rows: 1fr 90px;
+            height: 100vh;
+        }
+/* Color de la barra de navegacion izquierda*/
+        .sidebar {
+            background-color: var(--beatz-izquierda);
+            padding: 24px;
+            grid-row: 1 / 2;
+        }
+/* Color de la barra de navegacion medio*/
+.main-content {
+            background: var(--beatz-central);
+            padding: 24px;
+            overflow-y: auto;
+        }
+/* Color de la letra encima cards*/
+        .main-content h1{
+            color: white;
+        }
+/* Color de la barra de reproducción (footer)*/
+        .player-bar {
+            background-color: var(--beatz-footer);
+            grid-column: 1 / -1;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Color cards*/
+        .playlist-card {
+            background-color: var(--beatz-cards);
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+/* Color pasar encima de cards*/
+        .playlist-card:hover {
+            background-color: var(--beatz-hover);
+        }
+        .sidebar-nav {
+            margin-bottom: 24px;
+        }
+
+        .sidebar-nav a {
+            color: #b3b3b3;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            font-weight: 600;
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--spotify-white);
+        }
+
+
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+            padding: 24px 0;
+        }
+
+
+        .playlist-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .playlist-card h3 {
+            margin: 0;
+            font-size: 16px;
+            color: var(--spotify-white);
+        }
+
+        .playlist-card p {
+            margin: 8px 0 0;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
