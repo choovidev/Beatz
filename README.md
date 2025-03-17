@@ -1,2 +1,1 @@
-Beatz.
-Reproductor de música.
+🎧Beatz🎧
