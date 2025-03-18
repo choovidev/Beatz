@@ -1,105 +1,226 @@
- :root {
-            --beatz-izquierda: #0D0D0D;
-            --beatz-central: #0E1821;
-            --beatz-footer: #072130;
-            --beatz-cards: #501529;
-            --beatz-hover: #3B1D29;
-        }
+:root {
+  --beatz-arriba: #3b1d29;
+  --beatz-central: #0e1821;
+  --beatz-abajo: #3b1d29;
+  --beatz-estandar: #3b1d29;
+}
+/*Estilos generales de la pagina*/
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--beatz-central);
+  text-align: center;
+  color: white;
+}
+/*header*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 20px;
+  background-color: var(--beatz-arriba);
+  font-family: "Poppins", sans-serif;
+}
+/*efecto de hover en el boton de inicio de sesion*/
+header button:hover {
+  background-color: black;
+}
+/*perfil*/
+header img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+}
+/*titulo*/
+header h1 {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+}
+/*boton de inicio de sesion*/
+.login {
+  background-color: var(--beatz-estandar);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+/*galeria de discos*/
+.gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px auto 20px;
+  padding: 20px;
+  max-width: 1200px;
+}
+/*galeria de discos*/
+.gallery-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/*columna de discos*/
+.column {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/*imagen de disco*/
+.image {
+  width: 180px;
+  height: 180px;
+  background: var(--beatz-estandar);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+/*efecto de hover en la imagen de disco*/
+.image:hover {
+  transform: scale(1.05);
+}
+/*imagen de disco*/
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+/* Estilos para las imágenes de álbumes en la galería */
+.gallery-section .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+/*boton de flecha*/
+.arrow {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+}
+/*efecto de hover en el boton de flecha*/
+.arrow:hover {
+  color: var(--beatz-estandar);
+}
+/*boton de flecha izquierda*/
+.arrow.left {
+  left: 0;
+}
 
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        /* Color de la letra*/
-        .now-playing {
-            color: white;
-        }
+.arrow.right {
+  right: 0;
+}
 
-        .container {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            grid-template-rows: 1fr 90px;
-            height: 100vh;
-        }
-/* Color de la barra de navegacion izquierda*/
-        .sidebar {
-            background-color: var(--beatz-izquierda);
-            padding: 24px;
-            grid-row: 1 / 2;
-        }
-/* Color de la barra de navegacion medio*/
-.main-content {
-            background: var(--beatz-central);
-            padding: 24px;
-            overflow-y: auto;
-        }
-/* Color de la letra encima cards*/
-        .main-content h1{
-            color: white;
-        }
-/* Color de la barra de reproducción (footer)*/
-        .player-bar {
-            background-color: var(--beatz-footer);
-            grid-column: 1 / -1;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Estilos generales del footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--beatz-abajo);
+}
 
-        /* Color cards*/
-        .playlist-card {
-            background-color: var(--beatz-cards);
-            color: white;
-            padding: 16px;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-/* Color pasar encima de cards*/
-        .playlist-card:hover {
-            background-color: var(--beatz-hover);
-        }
-        .sidebar-nav {
-            margin-bottom: 24px;
-        }
+/* Contenedor para alinear a la izquierda la imagen y la información de la canción */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
 
-        .sidebar-nav a {
-            color: #b3b3b3;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            padding: 8px 0;
-            font-weight: 600;
-        }
+/* Contenedor que agrupa la imagen y los detalles */
+.song-info {
+  display: flex;
+  align-items: center;
+}
 
-        .sidebar-nav a:hover {
-            color: var(--spotify-white);
-        }
+/* Estilos para la imagen del álbum */
+.album-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
 
+/* Estilos para el bloque de información de la canción */
+.song-details {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+}
+/*titulo de la cancion*/
+.song-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-family: "Poppins", sans-serif;
+}
+/*artista de la cancion*/
+.song-artist {
+  font-size: 12px;
+  color: #888;
+  font-family: "Poppins", sans-serif;
+}
+/* Contenedor para los botones de control a la derecha */
+.footer-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
 
-        .playlist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 24px;
-            padding: 24px 0;
-        }
+/* Estilos para los botones de control */
+.control {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
 
+/* Estilos para los títulos h4 */
+h4 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
 
-        .playlist-card img {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-
-        .playlist-card h3 {
-            margin: 0;
-            font-size: 16px;
-            color: var(--spotify-white);
-        }
-
-        .playlist-card p {
-            margin: 8px 0 0;
-            font-size: 14px;
-            color: #b3b3b3;
-        }
+/*efecto de hover en el boton de control*/
+.control:hover {
+  color: #888;
+}
