@@ -1,3 +1,4 @@
+/*Variables de color*/
 :root {
   --beatz-arriba: #3b1d29;
   --beatz-central: #0e1821;
@@ -23,10 +24,6 @@ header {
   background-color: var(--beatz-arriba);
   font-family: "Poppins", sans-serif;
 }
-/*efecto de hover en el boton de inicio de sesion*/
-header button:hover {
-  background-color: black;
-}
 /*perfil*/
 header img {
   position: relative;
@@ -41,15 +38,21 @@ header h1 {
   font-size: 40px;
   font-family: "Poppins", sans-serif;
 }
+/*efecto de hover en el boton de inicio de sesion*/
+header button:hover {
+  background-color: black;
+}
+
 /*boton de inicio de sesion*/
 .login {
   background-color: var(--beatz-estandar);
   color: white;
   border: none;
-  padding: 10px;
   cursor: pointer;
   position: absolute;
   left: 20px;
+  margin-top: -20px;
+  padding: 10px;
   font-family: "Poppins", sans-serif;
 }
 /*galeria de discos*/
@@ -95,7 +98,7 @@ header h1 {
 }
 /*efecto de hover en la imagen de disco*/
 .image:hover {
-  transform: scale(1.05);
+  transform: scale(1.3);
 }
 /*imagen de disco*/
 .image img {
@@ -136,7 +139,7 @@ header h1 {
 .arrow.left {
   left: 0;
 }
-
+/*boton de flecha derecha*/
 .arrow.right {
   right: 0;
 }
