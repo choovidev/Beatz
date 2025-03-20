@@ -19,10 +19,14 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding: 10px 20px;
   background-color: var(--beatz-arriba);
   font-family: "Poppins", sans-serif;
+  z-index: 1000;
 }
 /*perfil*/
 header img {
@@ -63,7 +67,7 @@ header button:hover {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  margin: 40px auto 20px;
+  margin: 100px auto 90px;
   padding: 20px;
   max-width: 1200px;
 }
@@ -148,12 +152,15 @@ header button:hover {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: var(--beatz-abajo);
+  z-index: 1000;
 }
 
 /* Contenedor para alinear a la izquierda la imagen y la información de la canción */
@@ -208,7 +215,7 @@ footer {
   border: none;
   color: #888;
   font-size: 20px;
-  margin: 10px;
+  margin: 10px 5px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
@@ -218,8 +225,7 @@ h4 {
   text-align: center;
   width: 100%;
   margin: 0;
-  padding: 10px 0;
-  font-family: "Poppins", sans-serif;
+  padding: 30px 0 10px 0;
   color: white;
 }
 
@@ -227,3 +233,187 @@ h4 {
 .control:hover {
   color: #888;
 }
+/* Ocultar la barra de desplazamiento en Chrome, Safari y Opera */
+.column::-webkit-scrollbar {
+  display: none;
+}
+/* Media Queries para Responsive Design */
+@media screen and (max-width: 1200px) {
+  .gallery-container {
+    max-width: 900px;
+  }
+  
+  .column {
+    max-width: 800px;
+  }
+}
+/*media queries para pantallas medianas*/
+@media screen and (max-width: 992px) {
+  .gallery-container {
+    max-width: 700px;
+  }
+  
+  .column {
+    max-width: 600px;
+  }
+  
+  .image {
+    width: 160px;
+    height: 160px;
+  }
+}
+/*media queries para pantallas medianas*/
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+    height: 70px;
+  }
+  
+  header h1 {
+    font-size: 32px;
+  }
+  
+  header img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .gallery-container {
+    margin: 90px auto 90px;
+  }
+  
+  .column {
+    padding: 0 20px;
+  }
+  
+  .image {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .arrow {
+    font-size: 30px;
+  }
+  
+  footer {
+    height: 70px;
+  }
+  
+  .footer-controls {
+    position: static;
+    transform: none;
+    flex: 1;
+  }
+  
+  .footer-left {
+    max-width: 40%;
+  }
+}
+/*media queries para pantallas pequeñas*/
+@media screen and (max-width: 576px) {
+  /*header*/
+  header {
+    height: 60px;
+  }
+  /*titulo*/
+  header h1 {
+    font-size: 28px;
+  }
+  /*boton de inicio de sesion*/
+  .login {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  /*galeria de discos*/
+  .gallery-container {
+    margin: 80px auto 80px;
+  }
+  /*columna de discos*/
+  .column {
+    padding: 0 10px;
+  }
+  /*imagen de disco*/
+  .image {
+    width: 120px;
+    height: 120px;
+  }
+  /*boton de flecha*/
+  .arrow {
+    font-size: 24px;
+    padding: 5px;
+  }
+  /*footer*/
+  footer {
+    height: 60px;
+    padding: 10px;
+  }
+  /*imagen de album*/
+  .album-cover {
+    width: 40px;
+    height: 40px;
+  }
+  /*titulo de la cancion*/
+  .song-title {
+    font-size: 12px;
+  }
+  /*artista de la cancion*/
+  .song-artist {
+    font-size: 10px;
+  }
+  /*boton de control*/
+  .control {
+    font-size: 16px;
+    margin: 10px 2px;
+  }
+  /*contenedor de footer*/
+  .footer-controls {
+    gap: 5px;
+  }
+  /*contenedor de footer a la izquierda*/
+  .footer-left {
+    max-width: 45%;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+  header {
+    height: 50px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+  }
+  
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .arrow {
+    font-size: 20px;
+  }
+  
+  footer {
+    height: 50px;
+  }
+  
+  .footer-controls {
+    gap: 3px;
+  }
+  
+  .footer-left {
+    max-width: 50%;
+  }
+  
+  .control {
+    font-size: 14px;
+    margin: 10px 1px;
+  }
+  
+  .gallery-container {
+    margin: 70px auto 70px;
+  }
+}
+
+
