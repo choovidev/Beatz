@@ -1,53 +1,52 @@
-// Obtener el formulario
-const loginForm = document.querySelector(".login-form");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("loginForm");
+  if (form) {
+    let isValidated = false; // Flag para indicar que ya se validó
+    form.addEventListener("submit", function (e) {
+      if (isValidated) return; // Si ya se validó, se permite el envío
 
-// Agregar evento de envío del formulario
-loginForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevenir el envío por defecto
+      e.preventDefault(); // Prevenir el envío por defecto
 
-  // Obtener los valores de los campos
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+      // Obtener y limpiar los valores de los campos
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const email = document.getElementById("email").value.trim();
 
-  // Asegurar que los campos no estén vacíos
-  if (username.length < 4 && password.length < 6) {
-    alert(
-      "El nombre de usuario debe tener al menos 4 caracteres y la contraseña debe tener al menos 6 caracteres"
-    );
-    return;
+      // Validar campo Usuario vacios
+      if (username === "") {
+        alert("El campo 'Usuario' es obligatorio.");
+        return;
+      }
+      if (username.length < 4) {
+        alert("El nombre de usuario debe tener al menos 4 caracteres.");
+        return;
+      }
+
+      // Validar campo Contraseña vacios
+      if (password === "") {
+        alert("El campo 'Contraseña' es obligatorio.");
+        return;
+      }
+      if (password.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+        return;
+      }
+
+      // Validar campo Correo electrónico
+      if (email === "") {
+        alert("El campo 'Correo electrónico' es obligatorio.");
+        return;
+      }
+      // Validar campo Correo electrónico con expresion regular
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("El correo electrónico no es válido.");
+        return;
+      }
+
+      // Si todas las validaciones pasan, se marca el formulario como validado y se envía manualmente
+      isValidated = true;
+      form.submit();
+    });
   }
-  // Validar que los campos no estén vacíos
-
-  if (username === "") {
-    alert("Por favor, ingresa un nombre de usuario");
-    return;
-  }
-
-  if (password === "") {
-    alert("Por favor, ingresa una contraseña");
-    return;
-  }
-
-  if (username.length < 4 && password.length < 6) {
-    alert(
-      "El nombre de usuario debe tener al menos 4 caracteres y la contraseña debe tener al menos 6 caracteres"
-    );
-    return;
-  }
-  // Validar longitud mínima del usuario
-  if (username.length < 4) {
-    alert("El nombre de usuario debe tener al menos 4 caracteres");
-    return;
-  }
-
-  // Validar longitud mínima de la contraseña
-  if (password.length < 6) {
-    alert("La contraseña debe tener al menos 6 caracteres");
-    return;
-  }
-
-  // Si todas las validaciones pasan, se podría proceder con el envío
-  // Por ahora, solo mostraremos un mensaje de éxito
-  alert("Inicio de sesión exitoso");
-  loginForm.reset();
 });

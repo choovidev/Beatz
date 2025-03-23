@@ -33,6 +33,8 @@ BΞΛTZ es una plataforma de música moderna y elegante inspirada en servicios d
   - Galería de álbumes
   - Reproductor de música
   - Navegación principal
-- **Página de login (login.html)**
+- **Página de login (procesar.php)**
   - Formulario de inicio de sesión
+  - Validación de usuarios
+- **Validación (validacion.js)**
   - Validación de usuarios
